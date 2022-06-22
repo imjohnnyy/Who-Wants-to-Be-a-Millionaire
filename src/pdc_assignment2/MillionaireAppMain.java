@@ -78,7 +78,7 @@ public class MillionaireAppMain extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 input = "A";
                 ngq.resultAns(input, round);
-                answers.insertDataIntAATable(round, input);        //Inserts the "A" input and the current round number into the UsersAnswersDB_Ebd database when the user presses this A button
+                answers.insertDataIntoUATable(round, input);        //Inserts the "A" input and the current round number into the UsersAnswersDB_Ebd database when the user presses this A button
             
                 jTextField1.setText(input + " is " + ngq.resultAns(input, round));
                 if(round < 15) {
@@ -133,7 +133,7 @@ public class MillionaireAppMain extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 input = "B";
                 ngq.resultAns(input, round);
-                answers.insertDataIntoAATable(round, input);      //Inserts the "B" input and the current round number into the UsersAnswersDB_Ebd database when the user presses this B button
+                answers.insertDataIntoUATable(round, input);      //Inserts the "B" input and the current round number into the UsersAnswersDB_Ebd database when the user presses this B button
                 jTextField1.setText(input + " is " + ngq.resultAns(input, round));
                 if(round < 15) {
                     System.out.println(ngq.getQuestion(round));
@@ -187,7 +187,7 @@ public class MillionaireAppMain extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 input = "C";
                 ngq.resultAns(input, round);
-                answers.insertDataIntoAATable(round, input);     //Inserts the "C" input and the current round number into the UsersAnswersDB_Ebd database when the user presses this C button
+                answers.insertDataIntoUATable(round, input);     //Inserts the "C" input and the current round number into the UsersAnswersDB_Ebd database when the user presses this C button
                 jTextField1.setText(input + " is " + ngq.resultAns(input, round));
                 if(round < 15) {
                     System.out.println(ngq.getQuestion(round));
@@ -241,7 +241,7 @@ public class MillionaireAppMain extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 input = "D";
                 ngq.resultAns(input, round);
-                answers.insertDataIntoAATable(round, input);       //Inserts the "D" input and the current round number into the UsersAnswersDB_Ebd database when the user presses this D button
+                answers.insertDataIntoUATable(round, input);       //Inserts the "D" input and the current round number into the UsersAnswersDB_Ebd database when the user presses this D button
                 jTextField1.setText(input + " is " + ngq.resultAns(input, round));
                 if(round < 15) {
                     System.out.println(ngq.getQuestion(round));
@@ -747,8 +747,8 @@ public class MillionaireAppMain extends javax.swing.JFrame {
         }
         
         UserAnswersDBManager ua = new UserAnswersDBManager(); 
-        ua.createAATable();
-        ua.clearAllDataInAATable();       //Deletes all of the existing data in the USER_ANSWERS table before recording the user's new data, for each time the game runs i.e. Resetting the recorded data.
+        ua.createUATable();
+        ua.clearAllDataInUATable();       //Deletes all of the existing data in the USER_ANSWERS table before recording the user's new data, for each time the game runs i.e. Resetting the recorded data.
                                     
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

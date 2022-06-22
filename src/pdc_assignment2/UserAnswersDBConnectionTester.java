@@ -33,12 +33,12 @@ public final class UserAnswersDBConnectionTester {
             try 
             {
                 connection = DriverManager.getConnection(DATABASE_URL, USER_NAME, PASSWORD);
-                System.out.println(DATABASE_URL + " ,  Successfully Connected to the AudienceAnswers Database...");
+                System.out.println(DATABASE_URL + " ,  Successfully Connected to the UserAnswersDB_Ebd Database...");
                 
             } 
             catch (SQLException ex) 
             {
-                System.out.println(ex.getMessage());
+                System.out.println("ERROR: Failed to start database 'UserAnswersDB_Ebd', please stop the server before running the MilionaireApp class");
             }
         
     }

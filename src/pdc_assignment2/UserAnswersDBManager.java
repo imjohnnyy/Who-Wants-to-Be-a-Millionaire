@@ -34,7 +34,7 @@ public class UserAnswersDBManager {
 
         }
 
-        //This createUATable() method creates the AUDIENCE_ANSWERS table along with the two columns - ROUND_NUMBER and SELECTED_ANSWER_NUMBER, in the UserAnswersDB_Ebd database
+        //This createUATable() method creates the USER_ANSWERS table along with the two columns - ROUND_NUMBER and SELECTED_ANSWER_NUMBER, in the UserAnswersDB_Ebd database
         public void createUATable() throws SQLException 
         {
             String createTable = "CREATE TABLE USER_ANSWERS " + "(ROUND_NUMBER integer NOT NULL, " +
@@ -43,7 +43,7 @@ public class UserAnswersDBManager {
             try  
             {
                statement.executeUpdate(createTable);
-               System.out.println("A new AudienceAnswers table has been created!");
+               System.out.println("A new UserAnswers table has been created!");
             } 
             catch (SQLException e) 
             {
@@ -59,7 +59,7 @@ public class UserAnswersDBManager {
 
             try {
                 System.out.println("\n");
-                String data = "INSERT INTO AUDIENCE_ANSWERS(ROUND_NUMBER, SELECTED_ANSWER_OPTION) VALUES (?, ?)";
+                String data = "INSERT INTO USER_ANSWERS(ROUND_NUMBER, SELECTED_ANSWER_OPTION) VALUES (?, ?)";
                 PreparedStatement pStatement = connection.prepareStatement(data);
 
                 pStatement.setInt(1, questionNum);
@@ -77,7 +77,7 @@ public class UserAnswersDBManager {
         //This clearAllDataInUATable() method deletes all of the existing data from the USER_ANSWERS table in the UserAnswersDB_Ebd database
         public void clearAllDataInUATable() throws SQLException 
         {
-            String clearData = "DELETE FROM AUDIENCE_ANSWERS";
+            String clearData = "DELETE FROM USER_ANSWERS";
             PreparedStatement pStatement = connection.prepareStatement(clearData);
             pStatement.executeUpdate();
 
